@@ -10,14 +10,16 @@ export class AppComponent {
   title = 'Listado Empleados';
 
   empleados:Array<Empleados>=[
-    new Empleados("Mau", "Torre", "Presidente", 8000),
-    new Empleados("Ricky", "rres", "VicePresidente", 8000),
-    new Empleados("Pedro", "To", "Ministro de economia", 8000),
-    new Empleados("Juan", "Torres", "Jefe del INADI", 8000),
   ];
 
-  cuadroNombre:String = "";
-  cuadroApellido:String = "";
-  cuadroCargo:String = "";
+  cuadroNombre:string = "";
+  cuadroApellido:string = "";
+  cuadroCargo:string = "";
   cuadroSalario:number = 0;
+
+  agregarEmpleado(){
+    let empleado=new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.empleados.push(empleado);
+  }
+ 
 }
