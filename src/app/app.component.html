@@ -31,13 +31,5 @@
 
 <br><br><br>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let empleado of empleados, let i=index">
-        {{i+1}} {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}}
+<app-empleado-hijo *ngFor="let empleado of empleados, let i=index" [empleado_para_hijo]="empleado" [indice_para_hijo]="i"></app-empleado-hijo>
 
-      </div>
-    </div>
-  </div>
-</div>
