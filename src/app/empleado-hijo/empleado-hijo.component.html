@@ -4,6 +4,14 @@
         <div >
           {{indice_para_hijo+1}} {{empleado_para_hijo.nombre}} {{empleado_para_hijo.apellido}} {{empleado_para_hijo.cargo}} {{empleado_para_hijo.salario}}
         </div>
+
+        <ul style="list-style: none;">
+          <li *ngFor="let caracteristica of caracteristicas">{{caracteristica}}</li>
+        </ul>
+        
+        <app-caracteristicas-empleado (caracteristicasEmpleado)="addCaracteristica($event)"></app-caracteristicas-empleado>
+
+        
       </div>
     </div>
   </div>

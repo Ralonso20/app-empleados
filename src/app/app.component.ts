@@ -21,5 +21,5 @@ export class AppComponent {
     let empleado=new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     this.empleados.push(empleado);
   }
- 
+
 }
