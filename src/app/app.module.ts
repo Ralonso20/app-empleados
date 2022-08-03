@@ -13,6 +13,7 @@ import { QuinesComponentsComponent } from './quines-components/quines-components
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateComponentComponent } from './update-component/update-component.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 
 const appRoutes:Routes=[
   {path: '' ,component:HomeComponentComponent},
@@ -20,7 +21,7 @@ const appRoutes:Routes=[
   {path: 'quienes' ,component:QuinesComponentsComponent},
   {path: 'contacto' ,component:ContactoComponentComponent},
   {path: 'actualiza/:id' ,component:UpdateComponentComponent},
-  {path: '**' ,component:ContactoComponentComponent},
+  {path: '**' ,component:ErrorPersonalizadoComponent},
 ];
 
 @NgModule({
@@ -33,6 +34,7 @@ const appRoutes:Routes=[
     QuinesComponentsComponent,
     ContactoComponentComponent,
     UpdateComponentComponent,
+    ErrorPersonalizadoComponent,
   ],
   imports: [
     BrowserModule,
