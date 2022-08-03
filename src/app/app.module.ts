@@ -20,7 +20,7 @@ const appRoutes:Routes=[
   {path: 'quienes' ,component:QuinesComponentsComponent},
   {path: 'contacto' ,component:ContactoComponentComponent},
   {path: 'actualiza/:id' ,component:UpdateComponentComponent},
-
+  {path: '**' ,component:ContactoComponentComponent},
 ];
 
 @NgModule({

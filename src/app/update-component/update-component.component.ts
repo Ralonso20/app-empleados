@@ -14,6 +14,7 @@ export class UpdateComponentComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.accion=parseInt(this.routeAc.snapshot.queryParams['accion']);
   }
   
   constructor(private route:Router ,private routeAc:ActivatedRoute, private servicio: ServicioEmpleadosService, private empleadosService:EmpleadosService){
@@ -27,6 +28,7 @@ export class UpdateComponentComponent implements OnInit {
     this.cuadroSalario=empleado.salario;
   }
 
+  accion!:number;
   indice!: number;
 
   empleados:Array<Empleados>=[];
@@ -36,19 +38,16 @@ export class UpdateComponentComponent implements OnInit {
   cuadroCargo:string = "";
   cuadroSalario:number = 0;
 
-  agregarEmpleado(){
-    let empleado=new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.empleadosService.agregarEmpleadoServicio(empleado);
-  }
-
   modificarEmpleado(){
-    let empleado=new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.empleadosService.updateEmpleadoServicio(this.indice, empleado);
-    this.route.navigate(['']);
+
+    if(this.accion == 1){
+      let empleado=new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+      this.empleadosService.updateEmpleadoServicio(this.indice, empleado);
+      this.route.navigate(['']);
+    }else{
+      this.empleadosService.deleteEmpleadoServicio(this.indice);
+      this.route.navigate(['']);
+    }
   }
 
-  eliminarEmpleado(){
-    this.empleadosService.deleteEmpleadoServicio(this.indice);
-    this.route.navigate(['']);
-  }
 }

@@ -2,9 +2,9 @@
     <div class="row">
       <div class="col">
         <div >
-          <a [routerLink]="['/actualiza', indice_para_hijo]">
-            {{indice_para_hijo+1}} {{empleado_para_hijo.nombre}} {{empleado_para_hijo.apellido}} {{empleado_para_hijo.cargo}} {{empleado_para_hijo.salario}}
-          </a>
+          {{indice_para_hijo+1}} {{empleado_para_hijo.nombre}} {{empleado_para_hijo.apellido}} {{empleado_para_hijo.cargo}} {{empleado_para_hijo.salario}}
+          <a [routerLink]="['/actualiza', indice_para_hijo]" [queryParams]="{accion:'1'}" style="margin: 3px;">Actualizar</a>
+          <a [routerLink]="['/actualiza', indice_para_hijo]" [queryParams]="{accion:'2'}" style="margin: 3px;">Eliminar</a>          
         </div>
 
         <ul style="list-style: none;">
