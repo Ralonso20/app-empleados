@@ -19,8 +19,7 @@ const appRoutes:Routes=[
   {path: 'proyectos' ,component:ProjectComponentComponent},
   {path: 'quienes' ,component:QuinesComponentsComponent},
   {path: 'contacto' ,component:ContactoComponentComponent},
-  {path: 'actualiza' ,component:UpdateComponentComponent},
-  
+  {path: 'actualiza/:id' ,component:UpdateComponentComponent},
 
 ];
 
